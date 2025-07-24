@@ -1,6 +1,6 @@
 package org.example
 
-fun main(){
+fun main() {
     val year: Short = 1961
     var hour: String = "09"
     var minute: String = "07"
