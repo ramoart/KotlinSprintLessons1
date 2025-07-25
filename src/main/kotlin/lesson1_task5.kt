@@ -1,12 +1,12 @@
 package org.example
-const val secondsInHour: Int = 3600
-const val secondsInMinute: Int = 60
+const val SECONDS_IN_HOUR: Int = 3600
+const val SECONDS_IN_MINUTE: Int = 60
 
 fun main() {
     val secondsAll: Int = 6480
-    val hours: Int = secondsAll / secondsInHour
-    val minutes: Int = (secondsAll - secondsInHour) / secondsInMinute
-    val secondsRest: Int = secondsAll - secondsInHour - minutes*secondsInMinute
+    val hours: Int = secondsAll / SECONDS_IN_HOUR
+    val minutes: Int = (secondsAll - SECONDS_IN_HOUR) / SECONDS_IN_MINUTE
+    val secondsRest: Int = secondsAll - SECONDS_IN_HOUR - minutes*SECONDS_IN_MINUTE
     val formattedTime: String = "%02d:%02d:%02d".format(hours, minutes, secondsRest)
     println("Время в космосе - $formattedTime")
 }
