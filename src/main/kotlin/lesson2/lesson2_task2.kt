@@ -8,7 +8,7 @@ fun main() {
 
     val oldsEmployersCosts = oldsEmployers * oldsEmployersSalary
     val summaryCosts = oldsEmployersCosts + newEmployers * newEmployersSalary
-    val averageSalary = (summaryCosts) / (oldsEmployers + newEmployers)
+    val averageSalary = (summaryCosts) / oldsEmployers + newEmployers
 
     println(oldsEmployersCosts)
     println(summaryCosts)
