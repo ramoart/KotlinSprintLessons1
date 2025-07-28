@@ -4,12 +4,12 @@ fun main() {
     var firstMove = "E2"
     var secondMove = "E4"
     var numberMove = "1"
-    var postData = "$firstMove -> $secondMove; Номер хода $numberMove"
+    var postData = "[$firstMove-$secondMove;$numberMove]"
     println(postData)
 
     firstMove = "D2"
     secondMove = "D3"
     numberMove = "2"
-    postData = "$firstMove -> $secondMove; Номер хода $numberMove"
+    postData = "[$firstMove-$secondMove;$numberMove]"
     println(postData)
 }
