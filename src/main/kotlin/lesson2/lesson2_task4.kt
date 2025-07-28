@@ -1,16 +1,15 @@
 package lesson2
 
-const val ONE_INT = 1
+const val TO_FRACTION = 100
 
 fun main() {
-    val buffPercentInt = 20
+    val buffPercentDouble: Double = 20.0
+    val buffPercent = buffPercentDouble / TO_FRACTION
     val crystallOre = 7
     val metallOre = 11
 
-    val buffPercentToFloat = buffPercentInt.toFloat()
-    val buffPercent = ONE_INT + buffPercentToFloat / 100
-    val buffCrystallOre = (crystallOre * buffPercent) - crystallOre
-    val buffMetallOre = (metallOre * buffPercent) - metallOre
+    val buffCrystallOre = crystallOre * buffPercent
+    val buffMetallOre = metallOre * buffPercent
 
     println("Количество забафнутой кристаллической руды - ${buffCrystallOre.toInt()}")
     println("Количество забафнутой железной руды - ${buffMetallOre.toInt()}")
