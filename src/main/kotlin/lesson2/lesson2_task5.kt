@@ -3,7 +3,6 @@ package lesson2
 import kotlin.math.pow
 
 const val ONE_INT = 1
-const val TO_FRACTION = 100
 
 fun main() {
     val percentRateDouble = 16.7
