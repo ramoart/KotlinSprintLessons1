@@ -4,10 +4,10 @@ fun main() {
     var lastName = "Андреева"
     val firstName = "Татьяна"
     val middleName = "Сергеевна"
-    val ageStart = 20
-    val ageEnd = 22
-    println("[$lastName $firstName $middleName, $ageStart]")
+    var age = 20
+    println("[$lastName $firstName $middleName, $age]")
 
     lastName = "Cидорова"
-    println("[$lastName $firstName $middleName, $ageEnd]")
+    age = 22
+    println("[$lastName $firstName $middleName, $age]")
 }
