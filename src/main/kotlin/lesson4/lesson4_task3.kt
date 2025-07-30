@@ -7,13 +7,13 @@ fun main() {
     val currentSeason = "winter"
     println(
         "Благоприятные ли условия сейчас для роста бобовых? ${
-            (currentDaySunny == IS_SUNNY_DAY) && (currentCoverStatusOpen == COVER_STATUS_OPEN) &&
+            (currentDaySunny == IS_SUNNY_DAY) && (currentCoverStatusOpen == IS_AWNING_OPEN) &&
                     (currentWetAir == WET_AIR) && (currentSeason != BAD_SEASON)
         }"
     )
 }
 
 const val IS_SUNNY_DAY = true
-const val COVER_STATUS_OPEN = true
+const val IS_AWNING_OPEN = true
 const val WET_AIR = 20
 const val BAD_SEASON = "winter"
