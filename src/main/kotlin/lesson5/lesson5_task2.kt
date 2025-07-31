@@ -2,7 +2,7 @@ package lesson5
 
 fun main() {
     println("Введите год своего рождения, например, 1983:")
-    val yearBirth = readLine()!!.toInt()
+    val yearBirth = readln().toInt()
     val outputData = if ((CURRENT_YEAR - yearBirth) >= AGE_OF_MAJORITY) {
         "Показать экран со скрытым контентом"
     } else {
