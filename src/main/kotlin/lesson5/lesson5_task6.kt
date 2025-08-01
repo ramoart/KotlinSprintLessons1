@@ -8,7 +8,7 @@ fun main() {
     val weightUser = readln().toDouble()
     val heightUser = readln().toDouble()
     val imtCalc = weightUser / (heightUser / IN_METERS).pow(2)
-    val formattedImt = "%f.2".format(imtCalc)
+    val formattedImt = "%.2f".format(imtCalc)
     when {
         imtCalc < LOW_IMT -> println("Недостаточная масса тела, ваш ИМТ: $formattedImt")
         imtCalc in LOW_IMT..NORMAL_IMT -> println("Нормальная масса тела, ваш ИМТ: $formattedImt")
