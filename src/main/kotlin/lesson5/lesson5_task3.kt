@@ -5,14 +5,12 @@ fun main() {
     println("Отгадайте два целочисленных числа, вводя их по очереди и получите приз:")
     val numberOne = readln().toInt()
     val numberTwo = readln().toInt()
-
+    val userNumbers = setOf(numberOne, numberTwo)
+    val winNumbers = setOf(ONE_WIN_NUMBER, TWO_WIN_NUMBER)
     when {
-        numberOne == ONE_WIN_NUMBER && numberTwo == TWO_WIN_NUMBER -> println("Поздравляем! Вы выиграли главный приз!")
-        numberTwo == ONE_WIN_NUMBER && numberOne == TWO_WIN_NUMBER -> println("Поздравляем! Вы выиграли главный приз!")
-        numberOne == ONE_WIN_NUMBER || numberTwo == TWO_WIN_NUMBER -> println("Вы выиграли утешительный приз!")
-        numberTwo == ONE_WIN_NUMBER || numberOne == TWO_WIN_NUMBER -> println("Вы выиграли утешительный приз!")
-        numberOne != ONE_WIN_NUMBER && numberTwo != TWO_WIN_NUMBER -> println("Неудача!")
-        numberTwo != ONE_WIN_NUMBER && numberOne != TWO_WIN_NUMBER -> println("Неудача!")
+        userNumbers == winNumbers -> println("Поздравляем! Вы выиграли главный приз!")
+        userNumbers.any { it in winNumbers } -> println("Вы выиграли утешительный приз!")
+        else -> println("Неудача!")
     }
 }
 
