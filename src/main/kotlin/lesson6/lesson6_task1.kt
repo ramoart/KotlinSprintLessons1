@@ -5,24 +5,17 @@ fun main() {
     val userLogin = readln()
     println("Придумайте и введите пароль:")
     val userPassword = readln()
+    var check: Boolean
 
-    println("Для входа в программу введите логин:")
-    val inputLogin = readln()
-    println("Для входа в программу введите пароль:")
-    val inputPassword = readln()
-    var check = inputLogin == userLogin && userPassword == inputPassword
+    do {
+        println("Для входа в систему введите логин:")
+        val inputLogin = readln()
+        println("Для входа в систему введите пароль:")
+        val inputPassword = readln()
+        check = inputLogin == userLogin && inputPassword == userPassword
 
-    when {
-        check -> println("Авторизация прошла успешно")
-        else -> while (check == false) {
-            println("Логин и/или пароль были введены неверно, попробуйте снова. Введите логин:")
-            val inputLogin = readln()
-            println("Введите пароль:")
-            val inputPassword = readln()
-            if (inputLogin == userLogin && userPassword == inputPassword) {
-                println("Авторизация прошла успешно")
-                check = true
-            }
-        }
-    }
+        if (check == false) println("Логин и/или пароль были введены неверно, попробуйте снова.")
+    } while (check == false)
+
+    println("Авторизация прошла успешно")
 }
