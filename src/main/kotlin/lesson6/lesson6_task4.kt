@@ -10,26 +10,26 @@ fun main() {
     var inputNumber = readln().toInt()
     val randomNumber = Random.nextInt(1..9)
     var countOfAttempts = COUNT_OF_ATTEMPTS
-    if (inputNumber == randomNumber) {
-        println("Это была великолепная игра!")
-        println("Было задано число $randomNumber")
-    }
 
-    while (inputNumber != randomNumber) {
+    do {
+        if (inputNumber == randomNumber) {
+            println("Это была великолепная игра!")
+            println("Было задано число $randomNumber")
+            return
+        }
+
         if (inputNumber != randomNumber) {
             println("Неверно, попробуйте еще раз")
             println("Количество попыток = ${--countOfAttempts}")
             inputNumber = readln().toInt()
         }
-        if (inputNumber == randomNumber) {
-            println("Это была великолепная игра!")
-            println("Было задано число $randomNumber")
-        }
+
         if (countOfAttempts == 0) {
             println("Вы проиграли!")
-            exitProcess(0)
+            return
         }
-    }
+    } while (countOfAttempts > 0)
+
 }
 
 const val COUNT_OF_ATTEMPTS = 5
