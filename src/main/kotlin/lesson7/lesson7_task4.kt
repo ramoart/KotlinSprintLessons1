@@ -2,10 +2,12 @@ package lesson7
 
 fun main() {
     println("Введите количество секунд, которые нужно засечь:")
-    var inputTimer = readln().toInt()
-    for (i in inputTimer downTo 1) {
+    val seconds = readln().toInt()
+    for (i in seconds downTo 0) {
+        Thread.sleep(DELAY_MS)
         println("Осталось $i секунд")
-        Thread.sleep(1000)
     }
     println("Время вышло")
 }
+
+const val DELAY_MS: Long = 1000
