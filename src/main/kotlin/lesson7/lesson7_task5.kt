@@ -6,6 +6,7 @@ fun main() {
     val rangeNumbers = '0'..'9'
     var inputNumber: Int
     val passwordList = mutableListOf<Char>()
+    val allChars = rangeChar + rangeCharCapital + rangeNumbers
 
     do {
         println("Добро пожаловать в генератор паролей!")
@@ -19,7 +20,6 @@ fun main() {
     passwordList.add(rangeNumbers.random())
 
     while (passwordList.size < inputNumber) {
-        val allChars = rangeChar + rangeCharCapital + rangeNumbers
         passwordList.add(allChars.random())
     }
 
