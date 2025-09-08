@@ -14,14 +14,17 @@ fun main() {
 
     } while (inputNumber < MINIMUM_VALUE)
 
-    repeat(inputNumber) {
-        passwordList.add(rangeChar.random())
-        passwordList.add(rangeCharCapital.random())
-        passwordList.add(rangeNumbers.random())
+    passwordList.add(rangeChar.random())
+    passwordList.add(rangeCharCapital.random())
+    passwordList.add(rangeNumbers.random())
+
+    while (passwordList.size < inputNumber) {
+        val allChars = rangeChar + rangeCharCapital + rangeNumbers
+        passwordList.add(allChars.random())
     }
 
     passwordList.shuffle()
-    val password = passwordList.take(inputNumber).joinToString("")
+    val password = passwordList.joinToString("")
 
     println("Ваш пароль $password")
 }
