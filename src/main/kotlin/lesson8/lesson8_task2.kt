@@ -6,10 +6,11 @@ fun main() {
     val inputIndgredient = readln()
     var found = false
 
-    for (i in 0..krustyKrabsBurgerArray.size - 1) {
-        if (inputIndgredient == krustyKrabsBurgerArray[i]) {
-            println("Ингредиент ${krustyKrabsBurgerArray[i]} в рецепте есть")
+    for (i in krustyKrabsBurgerArray) {
+        if (inputIndgredient == i) {
+            println("Ингредиент $i в рецепте есть")
             found = true
+            break
         }
     }
 
