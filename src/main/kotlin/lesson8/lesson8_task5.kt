@@ -2,15 +2,13 @@ package lesson8
 
 fun main() {
     println("Mr.Plankton, введите количество ингредиентов, из которых будет составлен КрастиБургер:")
-    var inputPieces = readln().toInt()
-    val krustyKrabsBurgerArray = arrayOfNulls<String>(inputPieces)
-    var inputItem: String
-    for (i in 0..krustyKrabsBurgerArray.size - 1) {
-        println("Введите ${inputPieces--} ингредиентов, по очереди")
-        inputItem = readln()
-        krustyKrabsBurgerArray[i] = inputItem
+    val inputPieces = readln().toInt()
+    val krustyKrabsBurgerArray = Array(inputPieces) { "" }
+
+    for (i in krustyKrabsBurgerArray.indices) {
+        println("Введите №${i + 1} ингредиента, по очереди")
+        krustyKrabsBurgerArray[i] = readln()
     }
 
-    val onPrintBurger = krustyKrabsBurgerArray.joinToString(", ")
-    println("Рецепт вашего КрастиБургера готов: $onPrintBurger")
+    println("Рецепт вашего КрастиБургера готов: ${krustyKrabsBurgerArray.joinToString(", ")}")
 }
