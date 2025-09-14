@@ -4,7 +4,7 @@ fun main() {
     val burgerList = mutableListOf<String>()
     println("Введите названия пяти ингредиентов:")
     repeat(COUNT_OF_PIECES) {
-        burgerList.add(readln())
+         burgerList.add(readln())
     }
 
     burgerList.sort()
