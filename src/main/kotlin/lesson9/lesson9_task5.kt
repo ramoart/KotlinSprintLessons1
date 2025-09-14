@@ -9,7 +9,8 @@ fun main() {
 
     burgerList.sort()
     burgerList[0] = burgerList[0].replaceFirstChar { it.uppercase() }
-    println("Ингредиенты блюда: ${burgerList.joinToString(", ")}")
+    val burgerSet = java.util.TreeSet(burgerList)
+    println("Ингредиенты блюда: ${burgerSet.joinToString(", ")}")
 }
 
 const val COUNT_OF_PIECES = 5
