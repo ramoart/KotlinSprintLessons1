@@ -7,10 +7,10 @@ fun main() {
         burgerList.add(readln())
     }
 
-    burgerList.sort()
-    burgerList[0] = burgerList[0].replaceFirstChar { it.uppercase() }
+    val sortedBurgerList = burgerList.toSortedSet().toMutableList()
+    sortedBurgerList[0] = sortedBurgerList[0].replaceFirstChar { it.uppercase() }
 
-    println("Ингредиенты блюда: ${burgerList.toSortedSet().joinToString(", ")}")
+    println("Ингредиенты блюда: ${sortedBurgerList.joinToString(", ")}")
 }
 
 const val COUNT_OF_PIECES = 5
