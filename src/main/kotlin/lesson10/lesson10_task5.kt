@@ -5,23 +5,29 @@ fun main() {
     val userLogin = readln()
     val userPassword = readln()
     val token = checkUser(userLogin, userPassword)
-    generateBasket(token)
 
+    if (token != null) {
+        val basket = generateBasket(token)
+        println("Содержимое корзины: $basket")
+    } else println("Авторизация не пройдена")
 }
 
-fun checkUser(userLogin: String, userPassword: String) : String? {
-    val userLogin = userLogin
-    val userPassword = userPassword
-    val token = if (userLogin == LOGIN && userPassword == PASSWORD) "G7aZ1kLm9TqP0yXcW8sD4hUvE2rJ5nBb"
-    else null
+fun checkUser(userLogin: String, userPassword: String): String? {
+    val token = if (userLogin == LOGIN && userPassword == PASSWORD) {
+        generationToken(userLogin, userPassword)
+    } else null
     return token
 }
 
-fun generateBasket(token: String?) {
-    val token = token
-    if (token == VALID_TOKEN) println("В вашей корзине находится следующий товар: Приставка Panasonic GoldStar 3DO") else println("Авторизация неудачна")
+fun generationToken(userLogin: String, userPassword: String): String {
+    val source = "$userLogin:$userPassword"
+    val base = source.hashCode().toUInt().toString(16)
+    return base.padEnd(32, '0').take(32)
+}
+
+fun generateBasket(token: String): String {
+    return "Приставка Panasonic GoldStar 3DO"
 }
 
 const val LOGIN = "ramoart"
 const val PASSWORD = "MyPassword"
-const val VALID_TOKEN = "G7aZ1kLm9TqP0yXcW8sD4hUvE2rJ5nBb"
