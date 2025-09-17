@@ -3,11 +3,11 @@ package lesson10
 fun main() {
     println("Задайте длину пароля для генерации:")
     val inputLengthPassword = readln().toInt()
-    val passwordList = generatePassword(inputLengthPassword)
-    println("Ваш пароль: ${passwordList.joinToString("")}")
+    val password = generatePassword(inputLengthPassword)
+    println("Ваш пароль: $password")
 }
 
-fun generatePassword(inputLengthPassword: Int): List<Char> {
+fun generatePassword(inputLengthPassword: Int): String {
     val numbers = '0'..'9'
     val symbols = ' '..'/'
     val passwordList = mutableListOf<Char>()
@@ -16,8 +16,8 @@ fun generatePassword(inputLengthPassword: Int): List<Char> {
         val char = if (i % TO_EVEN_NUMBER == REMAINDER_NUMBER) numbers.random() else symbols.random()
         passwordList.add(char)
     }
-
-    return passwordList
+    val password = passwordList.joinToString("")
+    return password
 }
 
 const val TO_EVEN_NUMBER = 2
