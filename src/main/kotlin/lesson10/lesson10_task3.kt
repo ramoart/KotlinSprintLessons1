@@ -16,6 +16,7 @@ fun generatePassword(inputLengthPassword: Int): String {
         val char = if (i % TO_EVEN_NUMBER == REMAINDER_NUMBER) numbers.random() else symbols.random()
         passwordList.add(char)
     }
+
     val password = passwordList.joinToString("")
     return password
 }
