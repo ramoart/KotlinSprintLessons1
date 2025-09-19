@@ -24,3 +24,11 @@ fun main() {
                 "найден с почтой ${user2.email} и его пароль ${user2.password}"
     )
 }
+
+class UserData(
+    val id: Int,
+    val login: String,
+    val password: String,
+    val email: String,
+) {
+}
