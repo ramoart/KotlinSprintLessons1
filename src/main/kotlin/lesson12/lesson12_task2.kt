@@ -6,9 +6,9 @@ fun main() {
 }
 
 class Weather2(
-    var dayTemp: Int,
-    var nightTemp: Int,
-    var bePrecipitation: Boolean,
+    val dayTemp: Int,
+    val nightTemp: Int,
+    val bePrecipitation: Boolean,
 ) {
     fun printData() {
         println(
