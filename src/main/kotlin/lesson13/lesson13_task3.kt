@@ -8,7 +8,7 @@ fun main() {
     val phoneBook5 = PhoneBook2("user5", 880055555, "Yandex")
     val phoneBookList = mutableListOf<PhoneBook2>(phoneBook, phoneBook2, phoneBook3, phoneBook4, phoneBook5)
     val companyPrint = phoneBookList.mapNotNull { it.companyName }
-    println("Компании в телефонной кнгие: $companyPrint")
+    println("Компании в телефонной книге: $companyPrint")
 }
 
 class PhoneBook2(
