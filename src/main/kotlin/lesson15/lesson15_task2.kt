@@ -1,10 +1,11 @@
 package lesson15
 
 fun main() {
-    val temperatureDay1 = Temperature(15, 60, 10)
+    val temperatureDay1 = Temperature(15, 60, 15)
     val precipitationDay1 = PrecipitationAmount(15, 60, 10)
-    val weatherData = WeatherServer(temperatureDay1.averageTemperature, precipitationDay1.averagePrecipitation)
-    weatherData.printData(temperatureDay1.averageTemperature, precipitationDay1.averagePrecipitation)
+    val serverWeather = WeatherServer()
+    serverWeather.sendData(temperatureDay1)
+    serverWeather.sendData(precipitationDay1)
 }
 
 abstract class WeatherStationStats(
@@ -25,12 +26,17 @@ class PrecipitationAmount(
 ) : WeatherStationStats(temperature, precipitationAmount)
 
 class WeatherServer(
-    val printAverageTemperature: Int,
-    val printAveragePrecipitation: Int,
 ) {
-    fun printData(printAverageTemperature: Int, printAveragePrecipitation: Int) {
-        println("Средняя температура составляет $printAverageTemperature градусов")
-        println("Среднее количество осадкой составляет $printAverageTemperature мм")
+    fun sendData(data: WeatherStationStats) {
+        when (data) {
+            is Temperature -> {
+                println("Средняя температура составляет ${data.averageTemperature} градусов")
+            }
+
+            is PrecipitationAmount -> {
+                println("Средняя количество осадков составляет ${data.averagePrecipitation} мм")
+            }
+        }
     }
 }
 
