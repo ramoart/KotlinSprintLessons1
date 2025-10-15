@@ -11,18 +11,15 @@ fun main() {
     admin1.deleteUsers()
 }
 
-abstract class ActionOnForum(
-) {
-    abstract fun readForum()
-    abstract fun textMessage()
-    abstract fun deleteMessage()
-    abstract fun deleteUsers()
+interface ActionOnForum {
+    fun readForum()
+    fun textMessage()
 }
 
 class User(
     val idUsers: Int,
     val userName: String,
-) : ActionOnForum() {
+) : ActionOnForum {
     override fun readForum() {
         println("Пользователь $userName создал и прочитал ветку форума")
     }
@@ -31,17 +28,12 @@ class User(
         println("Пользователь $userName написал первое сообщение в ветке")
     }
 
-    override fun deleteMessage() {
-    }
-
-    override fun deleteUsers() {
-    }
 }
 
 class Admin(
     val idAdmins: Int,
     val adminName: String,
-) : ActionOnForum() {
+) : ActionOnForum {
     override fun readForum() {
         println("Админ $adminName прочитал ветку форума")
     }
@@ -50,11 +42,11 @@ class Admin(
         println("Админ $adminName ответил пользователю")
     }
 
-    override fun deleteMessage() {
+    fun deleteMessage() {
         println("Админ $adminName удалил сообщение юзера")
     }
 
-    override fun deleteUsers() {
+    fun deleteUsers() {
         println("Админ $adminName забанил и удалил юзера")
     }
 }
