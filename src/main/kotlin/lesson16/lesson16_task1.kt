@@ -5,8 +5,8 @@ fun main() {
     cube1.printNumber()
 }
 
-private class Cube {
-    val numberRandom: Int = (1..6).random()
+class Cube {
+   private val numberRandom: Int = (1..6).random()
     fun printNumber() {
         println("Выпавшее число $numberRandom")
     }
