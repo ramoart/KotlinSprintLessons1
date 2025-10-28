@@ -1,10 +1,10 @@
 package lesson17
 
 fun main() {
-    val packageCargo1 = PackageCargo()
-    packageCargo1.location = "Санкт-Петербург"
-    println("Новая локация: ${packageCargo1.location}")
-    println("Счетчик перемещений: ${packageCargo1.countCargo}")
+    val packageCargo = PackageCargo()
+    packageCargo.location = "Санкт-Петербург"
+    println("Новая локация: ${packageCargo.location}")
+    println("Счетчик перемещений: ${packageCargo.countCargo}")
 }
 
 class PackageCargo(
