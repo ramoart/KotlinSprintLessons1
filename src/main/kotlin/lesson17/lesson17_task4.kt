@@ -9,7 +9,7 @@ fun main() {
 
 class PackageCargo(
     val packageNumber: Int = 15,
-    val initialLocation: String = "остров Котлин",
+    initialLocation: String = "остров Котлин",
 ) {
     var countCargo: Int = 0
         private set
