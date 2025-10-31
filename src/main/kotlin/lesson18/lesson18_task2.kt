@@ -1,38 +1,32 @@
 package lesson18
 
 fun main() {
-    val game1: Game = EdgeFour()
-    val game2: Game = EdgeSix()
-    val game3: Game = EdgeEight()
-    val gamesArray = listOf<Game>(game1, game2, game3)
+    val dice1: Dice = EdgeFour(4)
+    val dice2: Dice = EdgeSix(6)
+    val dice3: Dice = EdgeEight(8)
+    val gamesArray = listOf<Dice>(dice1, dice2, dice3)
     showAll(gamesArray)
 }
 
-fun showAll(games: List<Game>) {
-    games.forEach {
+fun showAll(dice: List<Dice>) {
+    dice.forEach {
         it.rollDice()
     }
 }
 
-open class Game {
+abstract class Dice(
+    val countOfEdges: Int,
+) {
     open fun rollDice() {
+        println("Бросили кубок с $countOfEdges гранями: результат ${(1..countOfEdges).random()}")
     }
 }
 
-class EdgeFour : Game() {
-    override fun rollDice() {
-        println("Бросили кубок с 4 гранями: результат ${(1..4).random()}")
-    }
+class EdgeFour(countOfEdges: Int) : Dice(countOfEdges) {
 }
 
-class EdgeSix : Game() {
-    override fun rollDice() {
-        println("Бросили кубок с 6 гранями: результат ${(1..6).random()}")
-    }
+class EdgeSix(countOfEdges: Int) : Dice(countOfEdges) {
 }
 
-class EdgeEight : Game() {
-    override fun rollDice() {
-        println("Бросили кубок с 8 гранями: результат ${(1..8).random()}")
-    }
+class EdgeEight(countOfEdges: Int) : Dice(countOfEdges) {
 }
