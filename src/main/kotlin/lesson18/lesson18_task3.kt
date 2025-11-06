@@ -5,10 +5,10 @@ fun main() {
     val dog = Dog("Собака", "кости")
     val cat = Cat("Кошка", "рыбу")
     val animalList = listOf<Animal>(fox, dog, cat)
-    animalEating(animalList)
-    fox.sleep()
-    dog.sleep()
-    cat.sleep()
+    animalList.forEach {
+        it.eating()
+        it.sleep()
+    }
 }
 
 fun animalEating(list: List<Animal>) {
@@ -20,16 +20,13 @@ fun animalEating(list: List<Animal>) {
 abstract class Animal(
     val animalName: String,
 ) {
-    open fun eating() {
-    }
-
+    abstract fun eating()
     fun sleep() {
         println("$animalName спит")
     }
 }
 
-class Fox
-    (
+class Fox(
     animalName: String,
     val food: String,
 ) : Animal(animalName) {
