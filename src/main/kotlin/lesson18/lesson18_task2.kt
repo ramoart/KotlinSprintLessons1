@@ -1,11 +1,11 @@
 package lesson18
 
 fun main() {
-    val dice1: Dice = EdgeFour(4)
-    val dice2: Dice = EdgeSix(6)
-    val dice3: Dice = EdgeEight(8)
-    val gamesArray = listOf<Dice>(dice1, dice2, dice3)
-    showAll(gamesArray)
+    val dice1: Dice = EdgeFour()
+    val dice2: Dice = EdgeSix()
+    val dice3: Dice = EdgeEight()
+    val diceList = listOf<Dice>(dice1, dice2, dice3)
+    showAll(diceList)
 }
 
 fun showAll(dice: List<Dice>) {
@@ -15,18 +15,21 @@ fun showAll(dice: List<Dice>) {
 }
 
 abstract class Dice(
-    val countOfEdges: Int,
 ) {
-    open fun rollDice() {
+    abstract val countOfEdges: Int
+    fun rollDice() {
         println("Бросили кубок с $countOfEdges гранями: результат ${(1..countOfEdges).random()}")
     }
 }
 
-class EdgeFour(countOfEdges: Int) : Dice(countOfEdges) {
+class EdgeFour() : Dice() {
+    override val countOfEdges: Int = 4
 }
 
-class EdgeSix(countOfEdges: Int) : Dice(countOfEdges) {
+class EdgeSix() : Dice() {
+    override val countOfEdges: Int = 6
 }
 
-class EdgeEight(countOfEdges: Int) : Dice(countOfEdges) {
+class EdgeEight() : Dice() {
+    override val countOfEdges: Int = 8
 }
