@@ -3,12 +3,12 @@ package lesson19
 fun main() {
     val fishList = listOf<Fish>(Fish.GUPPY, Fish.ANGELFISH, Fish.GOLDFISH, Fish.SIAMESE_FIGHTING_FISH)
 
-    println("Вы можете добавить следующих рыб в свой аквариум: ${fishList.joinToString()}")
+    println("Вы можете добавить следующих рыб в свой аквариум: " + fishList.joinToString { it.fishName })
 }
 
-enum class Fish {
-    GUPPY,
-    ANGELFISH,
-    GOLDFISH,
-    SIAMESE_FIGHTING_FISH,
+enum class Fish(val fishName: String) {
+    GUPPY("гуппи"),
+    ANGELFISH("скалярий"),
+    GOLDFISH("золотая рыбка"),
+    SIAMESE_FIGHTING_FISH("петушок"),
 }
