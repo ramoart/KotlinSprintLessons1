@@ -21,14 +21,14 @@ abstract class Dice {
     }
 }
 
-class EdgeFour() : Dice() {
+class EdgeFour : Dice() {
     override val countOfEdges: Int = 4
 }
 
-class EdgeSix() : Dice() {
+class EdgeSix : Dice() {
     override val countOfEdges: Int = 6
 }
 
-class EdgeEight() : Dice() {
+class EdgeEight : Dice() {
     override val countOfEdges: Int = 8
 }
