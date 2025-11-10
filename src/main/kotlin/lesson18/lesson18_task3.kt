@@ -11,12 +11,6 @@ fun main() {
     }
 }
 
-fun animalEating(list: List<Animal>) {
-    list.forEach {
-        it.eating()
-    }
-}
-
 abstract class Animal(
     val animalName: String,
 ) {
