@@ -1,7 +1,5 @@
 package lesson11
 
-import java.sql.Struct
-
 fun main() {
 
 }
