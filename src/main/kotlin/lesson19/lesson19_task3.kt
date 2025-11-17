@@ -19,5 +19,6 @@ class StarShip {
     }
 
     fun shooting() {
+        //TODO: реализовать стрельбу по астероидам
     }
 }
