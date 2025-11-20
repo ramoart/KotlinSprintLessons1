@@ -2,10 +2,10 @@ package lesson21
 
 fun main() {
     val string = "Программирование"
-    println(string.vowelCount(string))
+    println(string.vowelCount())
 }
 
-fun String.vowelCount(word: String): Int {
+fun String.vowelCount(): Int {
     val vowels = "аеёиоуыэюяАЕЁИОУЫЭЮЯ"
-    return word.count { it in vowels }
+    return this.count { it in vowels }
 }
