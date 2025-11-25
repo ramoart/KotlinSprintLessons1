@@ -8,7 +8,7 @@ fun main() {
     println(skills.maxCategory())
 }
 
-fun Map<String, Int>.maxCategory(): String {
-    return this.maxBy { it.value }.key
+fun Map<String, Int>.maxCategory(): String? {
+    return this.maxByOrNull { it.value }?.key
 }
 
