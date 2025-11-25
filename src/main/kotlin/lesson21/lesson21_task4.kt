@@ -11,5 +11,5 @@ fun main() {
 fun File.addToBeginning(text: String) {
     val lower = text.lowercase()
     val oldContent = this.readText()
-    this.writeText("$lower \n $oldContent")
+    this.writeText("$lower\n$oldContent")
 }
