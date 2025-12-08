@@ -7,11 +7,10 @@ fun main() {
         "В начале первой книги, точная дата не указана", 4.36
     )
 
-    val (property1, property2, property3, property4) = chapter1
-    println(property1)
-    println(property2)
-    println(property3)
-    println(property4)
+    println(chapter1.component1())
+    println(chapter1.component2())
+    println(chapter1.component3())
+    println(chapter1.component4())
 }
 
 data class GalacticGuide(
